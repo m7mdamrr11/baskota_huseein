@@ -218,6 +218,11 @@ body{
   font-size:18px;
 }
 
+.collection-card a{
+text-decoration:none;
+color:inherit;
+display:block;
+}
 /* Order Card */
 .collection-card.order{
   display:flex;
