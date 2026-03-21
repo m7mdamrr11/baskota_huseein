@@ -5,178 +5,537 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>منتجات حريمي - Perfume Store</title>
 
-<!-- Google Fonts -->
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<!-- Font Awesome -->
+<!-- Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
-body { background:#fff6f7; }
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#fff6f7;}
 
 /* Navbar */
-.navbar-new{ display:flex; align-items:center; justify-content:space-between; padding:20px 8%; background:linear-gradient(90deg,#ffeaea,#ffffff); position:sticky; top:0; z-index:1000; box-shadow:0 5px 15px rgba(0,0,0,0.05); transition:0.3s; }
-.navbar-new:hover{ box-shadow:0 5px 20px rgba(0,0,0,0.15); }
-.logo img{ height:60px; width:auto; display:block; }
-.nav-links{ display:flex; gap:35px; font-weight:500; }
-.nav-links a{ text-decoration:none; color:#333; position:relative; transition:0.3s; }
-.nav-links a:hover, .nav-links a.active{ color:#d96a78; }
-.nav-links a::after{ content:''; position:absolute; width:0%; height:2px; background:#d96a78; left:0; bottom:-5px; transition:0.3s; }
-.nav-links a:hover::after, .nav-links a.active::after{ width:100%; }
-.icons{ display:flex; gap:20px; font-size:18px; cursor:pointer; }
-.menu-toggle{ display:none; font-size:28px; color:#d96a78; cursor:pointer; }
+.navbar-new{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:20px 8%;
+background:linear-gradient(90deg,#ffeaea,#ffffff);
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+transition:0.3s;
+}
+.navbar-new:hover{
+box-shadow:0 5px 20px rgba(0,0,0,0.15);
+}
+.logo img{height:60px;}
+.nav-links{
+display:flex;
+gap:35px;
+font-weight:500;
+}
+.nav-links a{
+text-decoration:none;
+color:#333;
+position:relative;
+transition:0.3s;
+}
+.nav-links a:hover,
+.nav-links a.active{
+color:#d96a78;
+}
+.nav-links a::after{
+content:'';
+position:absolute;
+width:0%;
+height:2px;
+background:#d96a78;
+left:0;
+bottom:-5px;
+transition:0.3s;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after{
+width:100%;
+}
+.menu-toggle{
+display:none;
+font-size:28px;
+color:#d96a78;
+cursor:pointer;
+}
 
 /* Mobile Navbar */
 @media(max-width:768px){
-.nav-links{ position:absolute; top:70px; right:0; background:white; flex-direction:column; width:220px; padding:25px; gap:20px; box-shadow:0 5px 20px rgba(0,0,0,0.1); transform:translateX(100%); transition:0.4s; border-radius:10px 0 0 10px; }
-.nav-links.active{ transform:translateX(0); }
-.menu-toggle{ display:block; }
+.nav-links{
+position:absolute;
+top:70px;
+right:0;
+background:white;
+flex-direction:column;
+width:220px;
+padding:25px;
+gap:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+transform:translateX(100%);
+transition:0.4s;
+border-radius:10px 0 0 10px;
+}
+.nav-links.active{transform:translateX(0);}
+.menu-toggle{display:block;}
 }
 
 /* Hero */
-.hero-new{ display:flex; align-items:center; justify-content:space-between; padding:80px 8%; background:linear-gradient(135deg, #ffeaea, #fff6f7); flex-wrap:wrap; gap:30px; }
-.hero-new .hero-text h2{ font-size:32px; color:#333; margin-bottom:10px; }
-.hero-new .hero-text h1{ font-size:70px; font-family:'Pacifico',cursive; color:#d96a78; margin-bottom:15px; }
-.hero-new .hero-text p{ font-size:16px; color:#555; margin-bottom:20px; }
-.hero-new .hero-text .btn-shop{ background:#d96a78; color:white; border:none; padding:15px 40px; border-radius:30px; font-size:16px; cursor:pointer; transition:0.3s; }
-.hero-new .hero-text .btn-shop:hover{ background:#c35664; }
-.hero-new .hero-image img{ width:400px; max-width:100%; border-radius:15px; }
+.hero-new{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:80px 8%;
+background:linear-gradient(135deg,#ffeaea,#fff6f7);
+flex-wrap:wrap;
+position:relative;
+overflow:hidden;
+}
+.hero-new::before{
+content:"";
+position:absolute;
+width:300px;
+height:300px;
+background:#ffd1d8;
+border-radius:50%;
+top:-100px;
+right:-100px;
+opacity:0.4;
+}
+.hero-text{max-width:500px;z-index:2;}
+.hero-text h2{font-size:22px;color:#888;margin-bottom:10px;}
+.hero-text h1{font-size:65px;font-family:'Pacifico';color:#d96a78;margin-bottom:15px;}
+.hero-text p{color:#555;margin-bottom:25px;line-height:1.6;}
 
-/* نص قبل المنتجات */
-.products-text{ text-align:center; font-size:16px; margin:30px 0; color:#555; }
+/* Hero Image */
+.hero-image{
+position:relative;
+z-index:2;
+}
+.hero-image img{
+width:450px;
+max-width:100%;
+border-radius:30% 0 30% 0;
+box-shadow:0 15px 30px rgba(0,0,0,0.1);
+transition:0.5s;
+}
+.hero-image img:hover{
+transform:scale(1.05) rotate(-2deg);
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
 
 /* Products */
-.products{ padding:40px 8%; }
-.products-container{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
-.product-card{ background:#fff; padding:15px; border-radius:15px; transition:0.3s; box-shadow:0 5px 15px rgba(0,0,0,0.08); }
-.product-card:hover{ transform:translateY(-5px); }
-.product-card img{ width:100%; height:200px; object-fit:cover; border-radius:10px; }
-.product-card h3{ margin:10px 0 5px; font-size:18px; }
-.product-card .inspired{ font-size:14px; color:#666; margin-bottom:10px; }
-.card-buttons{ display:flex; justify-content:space-between; gap:10px; margin-top:10px; }
-.order-btn, .details-btn{ background:#d96a78; color:white; padding:8px 20px; border-radius:25px; text-decoration:none; font-size:14px; transition:0.3s; display:inline-block; text-align:center; }
-.order-btn:hover, .details-btn:hover{ background:#c35664; }
+.products{padding:40px 8%;}
+.products-container{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+.product-card{
+background:#fff;
+padding:10px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+transition:0.3s;
+text-align:center;
+}
+.product-card:hover{transform:translateY(-5px);}
+.product-card img{
+width:100%;
+height:170px;
+object-fit:cover;
+border-radius:10px;
+}
+.product-card h3{margin:10px 0;font-size:16px;}
+.card-buttons{
+display:flex;
+flex-direction:column;
+gap:8px;
+margin-top:10px;
+}
+.order-btn,.details-btn{
+background:#d96a78;
+color:white;
+padding:8px;
+border-radius:25px;
+text-decoration:none;
+font-size:13px;
+}
 
-/* Popup Details */
-.popup-overlay{ display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:10000; }
-.popup-content{ background:white; padding:30px; border-radius:15px; width:90%; max-width:400px; text-align:center; position:relative; }
-.popup-content img{ width:150px; border-radius:10px; margin-bottom:15px; }
-.popup-content h3{ margin-bottom:10px; font-size:20px; color:#d96a78; }
-.popup-content p{ margin-bottom:8px; color:#555; font-weight:500; }
-.close-btn{ position:absolute; top:10px; right:15px; font-size:22px; cursor:pointer; color:#d96a78; }
+/* Popup */
+.popup-overlay{
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.5);
+justify-content:center;
+align-items:center;
+z-index:10000;
+}
+.popup-content{
+background:white;
+padding:25px;
+border-radius:15px;
+width:90%;
+max-width:350px;
+text-align:center;
+position:relative;
+}
+.popup-content img{
+width:120px;
+border-radius:10px;
+margin-bottom:10px;
+}
+.close-btn{
+position:absolute;
+top:10px;
+right:15px;
+font-size:22px;
+cursor:pointer;
+color:#d96a78;
+}
 
 /* Mobile */
 @media(max-width:768px){
-.hero-new{ flex-direction:column; text-align:center; padding:40px 5%; }
-.hero-new .hero-text h1{ font-size:50px; }
-.hero-new .hero-text h2{ font-size:24px; }
-.hero-new .hero-text p{ font-size:14px; }
-.hero-new .hero-image img{ width:250px; margin-top:20px; }
-.products-container{ grid-template-columns:1fr; }
-.product-card img{ height:180px; }
+.hero-new{
+flex-direction:column;
+text-align:center;
+padding:50px 5%;
+}
+.hero-text h1{font-size:45px;}
+.hero-image img{
+width:250px;
+margin-top:20px;
+border-radius:20% 0 20% 0;
+}
+.products-container{
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+.product-card img{height:140px;}
+.product-card h3{font-size:14px;}
 }
 </style>
 </head>
+
 <body>
 
 <!-- Navbar -->
 <header class="navbar-new">
-  <div class="logo">
-    <img src="logo-removebg-preview.jpg" alt="Logo">
-  </div>
-  <nav class="nav-links">
-    <a href="index.html"><i class="fa-solid fa-arrow-right-to-bracket"></i> الرئيسية</a>
-    <a href="men.html">رجالي</a>
-    <a class="active" href="women.html">حريمي</a>
-    <a href="contact.html">اتصل بنا</a>
-  </nav>
-  <div class="icons">   
-  <i class="fa-solid fa-bars menu-toggle"></i>
+<div class="logo">
+<img src="logo-removebg-preview.jpg">
+</div>
+<nav class="nav-links">
+<a href="index.html">الرئيسية</a>
+<a href="men.html">رجالي</a>
+<a class="active">حريمي</a>
+<a href="contact.html">اتصل بنا</a>
+</nav>
+<i class="fa-solid fa-bars menu-toggle"></i>
 </header>
 
 <!-- Hero -->
 <section class="hero-new">
-  <div class="hero-text">
-    <h2>Women Perfume</h2>
-    <h1>عطور فاخرة</h1>
-    <p>أفضل التركيبات العطرية للنساء</p>
-  </div>
-  <div class="hero-image">
-    <img src="woman.jpeg" alt="Women Perfumes">
-  </div>
+<div class="hero-text">
+<h2>Women Collection</h2>
+<h1>عطور فاخرة</h1>
+<p>اختاري عطرك المميز من أفضل التركيبات العالمية بجودة وثبات عالي.</p>
+</div>
+<div class="hero-image">
+<img src="woman.jpeg">
+</div>
 </section>
-
-<p class="products-text">اختر عطرك الحريمي المفضل من مجموعتنا المختارة من أشهر العطور العالمية.</p>
 
 <!-- Products -->
 <section class="products">
-  <div class="products-container">
-    <div class="product-card">
-      <img src="chanel-no5.jpeg" alt="Chanel No5">
-      <h3>CHANEL NO5</h3>
-      <div class="card-buttons">
-        <a href="https://wa.me/201205232385?text=مرحباً! أود طلب CHANEL NO5" class="order-btn" target="_blank">اطلب الآن</a>
-        <a href="#" class="details-btn" 
-          data-name="CHANEL NO5"
-          data-img="chanel-no5.jpeg"
-          data-high="تركيز عالي: 18 L.E/جرام"
-          data-medium="تركيز متوسط: 12 L.E/جرام">التفاصيل</a>
-      </div>
-    </div>
-    <div class="product-card">
-      <img src="coco-mademoiselle.jpeg" alt="Coco Mademoiselle">
-      <h3>COCO MADEMOISELLE</h3>
-      <div class="card-buttons">
-        <a href="https://wa.me/201205232385?text=مرحباً! أود طلب COCO MADEMOISELLE" class="order-btn" target="_blank">اطلب الآن</a>
-        <a href="#" class="details-btn" 
-          data-name="COCO MADEMOISELLE"
-          data-img="coco-mademoiselle.jpeg"
-          data-high="تركيز عالي: 20 L.E/جرام"
-          data-medium="تركيز متوسط: 15 L.E/جرام">التفاصيل</a>
-      </div>
-    </div>
-  </div>
+<div class="products-container">
+
+<div class="product-card">
+<img src="paris-milton.jpeg">
+<h3>PARIS MILTON</h3>
+<div class="card-buttons">
+<a href="https://wa.me/201205232385?text=طلب PARIS MILTON" class="order-btn">اطلب الآن</a>
+<a href="#" class="details-btn"
+data-name="PARIS MILTON"
+data-img="paris-milton.jpeg"
+data-high="تركيز عالي: 12 L.E/جرام">التفاصيل</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="miss-dior.jpeg">
+<h3>MISS DIOR</h3>
+<div class="card-buttons">
+<a href="https://wa.me/201205232385?text=طلب MISS DIOR" class="order-btn">اطلب الآن</a>
+<a href="#" class="details-btn"
+data-name="MISS DIOR"
+data-img="miss-dior.jpeg"
+data-high="تركيز عالي: 12 L.E/جرام">التفاصيل</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="yara.jpeg">
+<h3>YARA</h3>
+<div class="card-buttons">
+<a href="https://wa.me/201205232385?text=طلب PERFUME YARA" class="order-btn">اطلب الآن</a>
+<a href="#" class="details-btn"
+data-name="YARA"
+data-img="yara.jpeg"
+data-high="تركيز عالي: 15 L.E/جرام"
+data-medium="تركيز متوسط: 10 L.E/جرام">التفاصيل</a>
+</div>
+</div>
+
+
+<div class="product-card">
+<img src="yara-candy.jpeg">
+<h3>YARA CANDY</h3>
+<div class="card-buttons">
+<a href="https://wa.me/201205232385?text=طلب PERFUME YARA CANDY" class="order-btn">اطلب الآن</a>
+<a href="#" class="details-btn"
+data-name="YARA CANDY"
+data-img="yara-candy.jpeg"
+data-high="تركيز عالي: 15 L.E/جرام"
+data-medium="تركيز متوسط: 10 L.E/جرام">التفاصيل</a>
+</div>
+</div>
+
+
+
+<div class="product-card">
+<img src="burberry-her.jpeg">
+<h3>BURBERRY HER</h3>
+<div class="card-buttons">
+<a href="https://wa.me/201205232385?text=طلب PERFUME BURBERRY HER" class="order-btn">اطلب الآن</a>
+<a href="#" class="details-btn"
+data-name="BURBERRY HER"
+data-img="burberry-her.jpeg"
+data-high="تركيز عالي: 15 L.E/جرام"
+data-medium="تركيب زجاجات حسب الطلب">التفاصيل</a>
+</div>
+</div>
+
+
+<div class="product-card">
+<img src="very-sexy.jpg">
+<h3>VERY SEXY NOW</h3>
+<div class="card-buttons">
+<a href="https://wa.me/201205232385?text=طلب PERFUME VERY SEXY NOW" class="order-btn">اطلب الآن</a>
+<a href="#" class="details-btn"
+data-name="VERY SEXY NOW"
+data-img="very-sexy.jpg"
+data-high="تركيز عالي: 12 L.E/جرام"
+data-medium="تركيب زجاجات حسب الطلب">التفاصيل</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="bombshell.jpg">
+<h3>BOMBSHELL</h3>
+<div class="card-buttons">
+<a href="https://wa.me/201205232385?text=طلب BOMBSHELL" class="order-btn">اطلب الآن</a>
+<a href="#" class="details-btn"
+data-name="BOMBSHELL"
+data-img="bombshell.jpg"
+data-high="تركيز عالي: 15 L.E/جرام"
+data-medium="تركيب زجاجات حسب الطلب">التفاصيل</a>
+</div>
+</div>
+
+
+<div class="product-card">
+<img src="love-is-heavenly.jpg">
+<h3>LOVE IS HEAVVENLY</h3>
+<div class="card-buttons">
+<a href="https://wa.me/201205232385?text=طلب LOVE IS HEAVVENLY" class="order-btn">اطلب الآن</a>
+<a href="#" class="details-btn"
+data-name="LOVE IS HEAVVENLY"
+data-img="love-is-heavenly.jpg"
+data-high="تركيز عالي: 15 L.E/جرام"
+data-medium="تركيب زجاجات حسب الطلب">التفاصيل</a>
+</div>
+</div>
+
+
+<div class="product-card">
+<img src="mon-pais.jpeg">
+<h3>MON PARIS</h3>
+<div class="card-buttons">
+<a href="https://wa.me/201205232385?text=طلب PERFUME MON PARIS" class="order-btn">اطلب الآن</a>
+<a href="#" class="details-btn"
+data-name="MON PARIS"
+data-img="mon-pais.jpeg"
+data-high="تركيز عالي: 10 L.E/جرام"
+data-medium="تركيب زجاجات حسب الطلب">التفاصيل</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="musk-tahara.jpg">
+<h3>MUSK TAHARA</h3>
+<div class="card-buttons">
+<a href="https://wa.me/201205232385?text=طلب MUSK TAHARA" class="order-btn">اطلب الآن</a>
+<a href="#" class="details-btn"
+data-name="MUSK TAHARA"
+data-img="musk-tahara.jpg"
+data-high="تركيز عالي: 15 L.E/جرام"
+data-medium="تركيب زجاجات حسب الطلب">التفاصيل</a>
+</div>
+</div>
+
+
+<div class="product-card">
+<img src="musk-tahara.jpg">
+<h3>MUSK RUMAAN</h3>
+<div class="card-buttons">
+<a href="https://wa.me/201205232385?text=طلب MUSK RUMAAN" class="order-btn">اطلب الآن</a>
+<a href="#" class="details-btn"
+data-name="MUSK RUMAAN"
+data-img="musk-rumaan.jpg"
+data-high="تركيز عالي: 12 L.E/جرام"
+data-medium="تركيب زجاجات حسب الطلب">التفاصيل</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="musk-tahara.jpg">
+<h3>MUSK سنشوال</h3>
+<div class="card-buttons">
+<a href="https://wa.me/201205232385?text=طلب MUSK سنشوال" class="order-btn">اطلب الآن</a>
+<a href="#" class="details-btn"
+data-name="MUSK سنشوال"
+data-img="مسك-سنشوال.jpg"
+data-high="تركيز عالي: 12 L.E/جرام"
+data-medium="تركيب زجاجات حسب الطلب">التفاصيل</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="flora-by-gucci.jpg">
+<h3>FLORA BY GUCCI</h3>
+<div class="card-buttons">
+<a href="https://wa.me/201205232385?text=طلب FLORA BY GUCCI" class="order-btn">اطلب الآن</a>
+<a href="#" class="details-btn"
+data-name="FLORA BY GUCCI"
+data-img="flora-by-gucci.jpg"
+data-high="تركيز عالي: 15 L.E/جرام"
+data-medium="تركيب زجاجات حسب الطلب">التفاصيل</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="tosca.jpg">
+<h3>TOSCA</h3>
+<div class="card-buttons">
+<a href="https://wa.me/201205232385?text=طلب TOSCA" class="order-btn">اطلب الآن</a>
+<a href="#" class="details-btn"
+data-name="TOSCA"
+data-img="tosca.jpg"
+data-high="تركيز عالي: 10 L.E/جرام"
+data-medium="تركيب زجاجات حسب الطلب">التفاصيل</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="mancera.jpg">
+<h3>MANCERA</h3>
+<div class="card-buttons">
+<a href="https://wa.me/201205232385?text=طلب MANCERA" class="order-btn">اطلب الآن</a>
+<a href="#" class="details-btn"
+data-name="MANCERA"
+data-img="mancera.jpg"
+data-high="تركيز عالي: 10 L.E/جرام"
+data-medium="تركيب زجاجات حسب الطلب">التفاصيل</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="Sense Laverne.jpg">
+<h3>Sense Laverne</h3>
+<div class="card-buttons">
+<a href="https://wa.me/201205232385?text=طلب Sense Laverne" class="order-btn">اطلب الآن</a>
+<a href="#" class="details-btn"
+data-name="MANCERA"
+data-img="mancera.jpg"
+data-high="تركيز عالي: 10 L.E/جرام"
+data-medium="تركيب زجاجات حسب الطلب">التفاصيل</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="212.jpg">
+<h3>212 SEXY</h3>
+<div class="card-buttons">
+<a href="https://wa.me/201205232385?text=طلب 212 SEXY" class="order-btn">اطلب الآن</a>
+<a href="#" class="details-btn"
+data-name="212"
+data-img="212.jpg"
+data-high="تركيز عالي: 15 L.E/جرام"
+data-medium="تركيب زجاجات حسب الطلب">التفاصيل</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="kayali-vanilla.jpg">
+<h3>KAYALI VANILLA</h3>
+<div class="card-buttons">
+<a href="https://wa.me/201205232385?text=طلب KAYALI VANILLA" class="order-btn">اطلب الآن</a>
+<a href="#" class="details-btn"
+data-name="KAYALI VANILLA"
+data-img="kayali-vanilla.jpg"
+data-high="تركيز عالي: 15 L.E/جرام"
+data-medium="تركيب زجاجات حسب الطلب">التفاصيل</a>
+</div>
+</div>
+
+</div>
 </section>
 
-<!-- Popup Details -->
+<!-- Popup -->
 <div id="product-popup" class="popup-overlay">
-  <div class="popup-content">
-    <span class="close-btn">&times;</span>
-    <img id="popup-img" src="" alt="Perfume">
-    <h3 id="popup-name"></h3>
-    <p id="popup-high"></p>
-    <p id="popup-medium"></p>
-  </div>
+<div class="popup-content">
+<span class="close-btn">&times;</span>
+<img id="popup-img">
+<h3 id="popup-name"></h3>
+<p id="popup-high"></p>
+<p id="popup-medium"></p>
+</div>
 </div>
 
 <script>
-// Menu toggle mobile
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
-menuToggle.addEventListener('click', () => { navLinks.classList.toggle('active'); });
+const menuToggle=document.querySelector('.menu-toggle');
+const navLinks=document.querySelector('.nav-links');
+menuToggle.onclick=()=>navLinks.classList.toggle('active');
 
-// Popup details
-const popup = document.getElementById('product-popup');
-const popupImg = document.getElementById('popup-img');
-const popupName = document.getElementById('popup-name');
-const popupHigh = document.getElementById('popup-high');
-const popupMedium = document.getElementById('popup-medium');
-const closeBtn = document.querySelector('.close-btn');
+const popup=document.getElementById('product-popup');
+const popupImg=document.getElementById('popup-img');
+const popupName=document.getElementById('popup-name');
+const popupHigh=document.getElementById('popup-high');
+const popupMedium=document.getElementById('popup-medium');
 
-document.querySelectorAll('.details-btn').forEach(btn => {
-  btn.addEventListener('click', e => {
-    e.preventDefault();
-    popup.style.display = 'flex';
-    popupImg.src = btn.dataset.img;
-    popupName.textContent = btn.dataset.name;
-    popupHigh.textContent = btn.dataset.high;
-    popupMedium.textContent = btn.dataset.medium;
-  });
+document.querySelectorAll('.details-btn').forEach(btn=>{
+btn.onclick=(e)=>{
+e.preventDefault();
+popup.style.display='flex';
+popupImg.src=btn.dataset.img;
+popupName.textContent=btn.dataset.name;
+popupHigh.textContent=btn.dataset.high;
+popupMedium.textContent=btn.dataset.medium || '';
+};
 });
 
-closeBtn.addEventListener('click', () => { popup.style.display = 'none'; });
-window.addEventListener('click', e => { if(e.target === popup) popup.style.display = 'none'; });
+document.querySelector('.close-btn').onclick=()=>popup.style.display='none';
+window.onclick=(e)=>{if(e.target===popup) popup.style.display='none';}
 </script>
 
 </body>
